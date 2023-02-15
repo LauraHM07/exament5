@@ -14,32 +14,32 @@
                                 href="welcome.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}" sec:authorize="hasAnyAuthority('')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}" sec:authorize="hasAnyAuthority('Matemáticas')">
                                 Matemáticas
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/lengua}">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/lengua}" sec:authorize="hasAnyAuthority('Lengua')">
                                 Lengua
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/ingles}">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/ingles}" sec:authorize="hasAnyAuthority('Inglés')">
                                 Inglés
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/religion}">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/religion}" sec:authorize="hasAnyAuthority('Religión')">
                                 Religión
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/fisica}">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/fisica}" sec:authorize="hasAnyAuthority('Física')">
                                 Física
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/quimica}">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/quimica}" sec:authorize="hasAnyAuthority('Química')">
                                 Química
                             </a>
                         </li>
