@@ -6,14 +6,7 @@
   <div th:replace="commons/menu :: menu" />
 
   <div class="container">
-    <h1 th:text="${greetings}">Hola</h1>
-
-    <!--
-
-    <h3 th:text="#{saludar.usuario(${session.usuario.name})}">Hello, Placeholder</h3>
-    <h4 th:text="${sessionid}"></h4>
-
-    -->
+    <h1>Hola</h1>
 
     <span sec:authorize="isAuthenticated()">
       | Logged user: <span sec:authentication="name"></span> |
