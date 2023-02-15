@@ -13,7 +13,7 @@ public class Asignatura {
     private String codigo;
     private String descripcion;
 
-    @ManyToMany(mappedBy = "asignatura")
+    @ManyToMany(mappedBy = "asignaturas")
     private List<Alumno> alumnos;
 
     public Asignatura() {

@@ -6,6 +6,6 @@ import com.oretania.portal.models.Alumno;
 
 public interface AlumnoRepository extends JpaRepository<Alumno, Integer>{
     
-    Alumno findByUserName(String name);
+    Alumno findByUsername(String username);
 
 }

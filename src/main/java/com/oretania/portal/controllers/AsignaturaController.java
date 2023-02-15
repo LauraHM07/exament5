@@ -15,7 +15,7 @@ public class AsignaturaController {
     }
 
     @RequestMapping(value = "/lengua")
-    @PreAuthorize("hasAuthority('Lengua)")
+    @PreAuthorize("hasAuthority('Lengua')")
     public String lengua() {
         return "asignaturas/lengua";
     }

@@ -19,7 +19,7 @@ import com.oretania.portal.repositories.AlumnoRepository;
 public class AlumnoService implements UserDetailsService {
 
     @Autowired
-    AlumnoRepository repository;
+    private AlumnoRepository repository;
 
     public Alumno createAlumno(Alumno alumno) {
         return repository.save(alumno);
@@ -29,7 +29,7 @@ public class AlumnoService implements UserDetailsService {
         return repository.save(alumno);
     }
 
-    public void deleteUser(int id) {
+    public void deleteAlumno(int id) {
         repository.deleteById(id);
     }
 
@@ -42,9 +42,9 @@ public class AlumnoService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         
-        Alumno alumno = repository.findByUserName(name);
+        Alumno alumno = repository.findByUsername(username);
 
         List<Asignatura> asignaturasUsuario = alumno.getAsignaturas();
         List<GrantedAuthority> asignaturas = new ArrayList<GrantedAuthority>();
@@ -54,7 +54,7 @@ public class AlumnoService implements UserDetailsService {
         }
 
         UserDetails uD = org.springframework.security.core.userdetails.User.builder()
-                    .username(alumno.getNombre())
+                    .username(alumno.getUsername())
                     .password(alumno.getPassword())
                     .authorities(asignaturas)
                     .build();

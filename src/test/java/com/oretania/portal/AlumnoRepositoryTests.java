@@ -106,6 +106,7 @@ class AlumnoRepositoryTests {
 		repoAlumno.save(u1);
 		repoAlumno.save(u2);
 		repoAlumno.save(u3);
+        repoAlumno.save(director);
 
 		Alumno u1OK = repoAlumno.save(u1);
 
