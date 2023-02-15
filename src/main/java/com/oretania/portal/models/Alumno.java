@@ -3,8 +3,12 @@ package com.oretania.portal.models;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Alumno {
@@ -15,9 +19,12 @@ public class Alumno {
     private String nombre;
     private String email;
     private String telefono;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "alumno_asignatura", joinColumns = @JoinColumn(name = "alumno_id"), inverseJoinColumns = @JoinColumn(name = "asignatura_id"))
     private List<Asignatura> asignaturas;
 
-    private String userName;
+    private String username;
     private String password;
 
     public Alumno(int codigo) {
@@ -67,12 +74,12 @@ public class Alumno {
         this.asignaturas = asignaturas;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

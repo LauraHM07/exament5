@@ -33,18 +33,23 @@ class AlumnoRepositoryTests {
 
 		Alumno u1 = new Alumno();
 		u1.setCodigo(1);
-		u1.setUserName("alumno1");
+		u1.setUsername("alumno1");
 		u1.setPassword(encoder.encode("1234"));
 
         Alumno u2 = new Alumno();
 		u2.setCodigo(2);
-		u2.setUserName("alumno2");
+		u2.setUsername("alumno2");
 		u2.setPassword(encoder.encode("1234"));
 
         Alumno u3 = new Alumno();
 		u3.setCodigo(3);
-		u3.setUserName("alumno3");
+		u3.setUsername("alumno3");
 		u3.setPassword(encoder.encode("1234"));
+
+		Alumno director = new Alumno();
+		director.setCodigo(4);
+		director.setUsername("director");
+		director.setPassword(encoder.encode("director1234"));
 
 		Asignatura a1 = new Asignatura();
 		a1.setCodigo("MAT");
@@ -76,14 +81,31 @@ class AlumnoRepositoryTests {
 		a6.setDescripcion("Química");
 		repoAsignatura.save(a6);
 
-		List<Asignatura> asignaturaAlumno1 = new ArrayList<Asignatura>();
-		asignaturaAlumno1.add(a1);
-		asignaturaAlumno1.add(a2);
-		asignaturaAlumno1.add(a3);
+		List<Asignatura> asignaturasAlumno1 = new ArrayList<Asignatura>();
+		asignaturasAlumno1.add(a1);
+		asignaturasAlumno1.add(a2);
+		asignaturasAlumno1.add(a5);
 
-		u1.setAsignaturas(asignaturaAlumno1);
+		List<Asignatura> asignaturasAlumno2 = new ArrayList<Asignatura>();
+		asignaturasAlumno2.add(a1);
+		asignaturasAlumno2.add(a3);
+		asignaturasAlumno2.add(a4);
+
+		List<Asignatura> asignaturasDirector = new ArrayList<Asignatura>();
+		asignaturasDirector.add(a1);
+		asignaturasDirector.add(a2);
+		asignaturasDirector.add(a3);
+		asignaturasDirector.add(a4);
+		asignaturasDirector.add(a5);
+		asignaturasDirector.add(a6);
+
+		u1.setAsignaturas(asignaturasAlumno1);
+		u2.setAsignaturas(asignaturasAlumno2);
+		director.setAsignaturas(asignaturasDirector);
 
 		repoAlumno.save(u1);
+		repoAlumno.save(u2);
+		repoAlumno.save(u3);
 
 		Alumno u1OK = repoAlumno.save(u1);
 
