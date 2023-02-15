@@ -35,7 +35,7 @@ public class AlumnoService implements UserDetailsService {
     }
 
     public Alumno getAlumno(int id) {
-        repository.findById(id).orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     public List<Alumno> findAll(){
