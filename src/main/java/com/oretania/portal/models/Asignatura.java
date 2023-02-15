@@ -47,7 +47,6 @@ public class Asignatura {
         this.alumnos = alumnos;
     }
 
-
     @Override
     public int hashCode() {
         final int prime = 31;

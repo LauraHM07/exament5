@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<xmlns:sec/>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <body>
     <div th:fragment="menu">
@@ -14,32 +14,32 @@
                                 href="welcome.html">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}" sec:authorize="hasAnyAuthority('Matemáticas')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/matematicas}" sec:authorize="hasAuthority('Matemáticas')">
                                 Matemáticas
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/lengua}" sec:authorize="hasAnyAuthority('Lengua')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/lengua}" sec:authorize="hasAuthority('Lengua')">
                                 Lengua
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/ingles}" sec:authorize="hasAnyAuthority('Inglés')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/ingles}" sec:authorize="hasAuthority('Inglés')">
                                 Inglés
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/religion}" sec:authorize="hasAnyAuthority('Religión')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/religion}" sec:authorize="hasAuthority('Religión')">
                                 Religión
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/fisica}" sec:authorize="hasAnyAuthority('Física')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/fisica}" sec:authorize="hasAuthority('Física')">
                                 Física
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/quimica}" sec:authorize="hasAnyAuthority('Química')">
+                            <a class="nav-link active" aria-current="page" th:href="@{/asignaturas/quimica}" sec:authorize="hasAuthority('Química')">
                                 Química
                             </a>
                         </li>

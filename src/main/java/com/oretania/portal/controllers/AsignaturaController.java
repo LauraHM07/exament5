@@ -11,36 +11,36 @@ public class AsignaturaController {
     @RequestMapping(value = "/matematicas")
     @PreAuthorize("hasAuthority('Matemáticas')")
     public String matematicas() {
-        return "matematicas";
+        return "asignaturas/matematicas";
     }
 
     @RequestMapping(value = "/lengua")
     @PreAuthorize("hasAuthority('Lengua)")
     public String lengua() {
-        return "lengua";
+        return "asignaturas/lengua";
     }
 
     @RequestMapping(value = "/ingles")
     @PreAuthorize("hasAuthority('Inglés')")
     public String ingles() {
-        return "ingles";
+        return "asignaturas/ingles";
     }
 
     @RequestMapping(value = "/religion")
     @PreAuthorize("hasAuthority('Religión')")
     public String religion() {
-        return "religion";
+        return "asignaturas/religion";
     }
 
     @RequestMapping(value = "/fisica")
     @PreAuthorize("hasAuthority('Física')")
     public String fisica() {
-        return "fisica";
+        return "asignaturas/fisica";
     }
 
     @RequestMapping(value = "/quimica")
     @PreAuthorize("hasAuthority('Química')")
     public String quimica() {
-        return "quimica";
+        return "asignaturas/quimica";
     }
 }

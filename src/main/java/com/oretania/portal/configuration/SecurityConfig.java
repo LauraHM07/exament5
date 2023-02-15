@@ -41,19 +41,19 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeRequests()
-                .anyRequest()
-                .authenticated()
-            .and()
-                .formLogin()
-            .and()
-                .httpBasic();
+            .authorizeRequests()
+            .anyRequest()
+            .authenticated()
+        .and()
+            .formLogin()
+        .and()
+            .httpBasic();
 
         return http.build();
     }
 
     @Bean
-    public UserDetailsService users() {
+    public UserDetailsService user() {
         UserDetails user = User.builder()
                 .username("user")
                 .password("{noop}kaka")
