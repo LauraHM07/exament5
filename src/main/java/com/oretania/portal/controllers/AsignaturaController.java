@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AsignaturaController {
     
     @RequestMapping(value = "/matematicas")
+    @PreAuthorize("hasAnyAuthority('Matemáticas')")
     public String matematicas() {
         return "matematicas";
     }

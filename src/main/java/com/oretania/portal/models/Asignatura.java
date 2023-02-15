@@ -8,8 +8,7 @@ public class Asignatura {
 
     @Id
     private String codigo;
-    private String descrripcion;
-
+    private String descripcion;
 
     public Asignatura() {
     }
@@ -26,12 +25,12 @@ public class Asignatura {
         this.codigo = codigo;
     }
 
-    public String getDescrripcion() {
-        return descrripcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescrripcion(String descrripcion) {
-        this.descrripcion = descrripcion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override

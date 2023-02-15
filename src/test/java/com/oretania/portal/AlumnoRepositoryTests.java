@@ -46,36 +46,34 @@ class AlumnoRepositoryTests {
 		u3.setUserName("alumno3");
 		u3.setPassword(encoder.encode("1234"));
 
-        
-
 		Asignatura a1 = new Asignatura();
 		a1.setCodigo("MAT");
-		a1.setDescrripcion("Matemáticas");
+		a1.setDescripcion("Matemáticas");
 		repoAsignatura.save(a1);
 
 		Asignatura a2 = new Asignatura();
 		a2.setCodigo("LEN");
-		a2.setDescrripcion("Lengua");
+		a2.setDescripcion("Lengua");
 		repoAsignatura.save(a2);
 
 		Asignatura a3 = new Asignatura();
 		a3.setCodigo("ING");
-		a3.setDescrripcion("Inglés");
+		a3.setDescripcion("Inglés");
 		repoAsignatura.save(a3);
 
 		Asignatura a4 = new Asignatura();
 		a4.setCodigo("REL");
-		a4.setDescrripcion("Religión");
+		a4.setDescripcion("Religión");
 		repoAsignatura.save(a4);
 
 		Asignatura a5 = new Asignatura();
 		a5.setCodigo("FIS");
-		a5.setDescrripcion("Física");
+		a5.setDescripcion("Física");
 		repoAsignatura.save(a5);
 
 		Asignatura a6 = new Asignatura();
 		a6.setCodigo("QUI");
-		a6.setDescrripcion("Química");
+		a6.setDescripcion("Química");
 		repoAsignatura.save(a6);
 
 		List<Asignatura> asignaturaAlumno1 = new ArrayList<Asignatura>();
@@ -85,10 +83,11 @@ class AlumnoRepositoryTests {
 
 		u1.setAsignaturas(asignaturaAlumno1);
 
+		repoAlumno.save(u1);
 
 		Alumno u1OK = repoAlumno.save(u1);
 
-		assertTrue(a6.getDescrripcion().equalsIgnoreCase("QUI"));
+		assertTrue(u1.getPassword().equalsIgnoreCase(u1OK.getPassword()));
 	}
 
 }

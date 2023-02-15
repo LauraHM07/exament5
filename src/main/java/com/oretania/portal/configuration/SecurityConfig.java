@@ -12,44 +12,32 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import com.oretania.portal.services.AlumnoService;
+
 @Configuration
 public class SecurityConfig {
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-        // return NoOpPasswordEncoder.getInstance();
+    AlumnoService myStudentService() {
+        return new AlumnoService();
     }
 
-
     @Bean
-    public UserDetailsService users() {
-        UserDetails user = User.builder()
-                .username("user")
-                // .password(passwordEncoder().encode("kaka"))
-                .password("{noop}kaka")
-                .authorities("USER")
-                .build();
-        UserDetails admin = User.builder()
-                .username("admin")
-                // .password(passwordEncoder().encode("kaka"))
-                .password("{bcrypt}$2a$10$GRLdNijSQMUvl/au9ofL.eDwmoohzzS7.rmNSJZ.0FxO/BTk76klW")
-                .authorities("USER", "ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(user, admin);
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 
-        authProvider.setUserDetailsService(users());
+        authProvider.setUserDetailsService(myStudentService());
         authProvider.setPasswordEncoder(passwordEncoder());
 
         return authProvider;
     }
 
-    // @Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
@@ -62,5 +50,22 @@ public class SecurityConfig {
                 .httpBasic();
 
         return http.build();
+    }
+
+    @Bean
+    public UserDetailsService users() {
+        UserDetails user = User.builder()
+                .username("user")
+                .password("{noop}kaka")
+                .authorities("USER")
+                .build();
+
+        UserDetails admin = User.builder()
+                .username("admin")
+                .password("{noop}1234")
+                .authorities("USER", "ADMIN")
+                .build();
+
+        return new InMemoryUserDetailsManager(user, admin);
     }
 }

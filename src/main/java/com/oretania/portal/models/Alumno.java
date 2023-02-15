@@ -15,11 +15,10 @@ public class Alumno {
     private String nombre;
     private String email;
     private String telefono;
+    private List<Asignatura> asignaturas;
 
     private String userName;
     private String password;
-
-    
 
     public Alumno(int codigo) {
         this.codigo = codigo;
@@ -60,7 +59,30 @@ public class Alumno {
         this.telefono = telefono;
     }
 
-    
+    public List<Asignatura> getAsignaturas() {
+        return asignaturas;
+    }
+
+    public void setAsignaturas(List<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -82,29 +104,4 @@ public class Alumno {
             return false;
         return true;
     }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public List<Asignatura> getAsignaturas() {
-        return asignaturas;
-    }
-
-    public void setAsignaturas(List<Asignatura> asignaturas) {
-        this.asignaturas = asignaturas;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }
